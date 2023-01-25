@@ -1,0 +1,57 @@
+El objetivo de este proyecto es poner en práctica todo el conocimiento que
+hemos desarrolado durante la asignatura.
+
+El objetivo de este ejercicio será desarrollar un paquete de Python fuera del
+entorno de Notebooks, que nos permita resolver una serie de problemas.
+
+Nos han encargado analizar imágenes de calles de distintas ciudades europeas
+para un proyecto relacionado con smart-cities. Para empezar a trabajar, tenemos
+un dataset de imágenes de tres ciudades que han estado tomadas desde dentro de
+un coche circulando por distintos puntos de cada ciudad. El dataset completo lo
+podéis encontrar aquí (https://www.cityscapes-dataset.com). 
+
+Junto con las imágenes nos han dado también unos ficheros de texto donde
+podemos encontrar los tipos de objeto que hay en cada una de ellas y sus
+posiciones. Para cada imagen tenemos un archivo de texto con uno o más objetos.
+Nos indican que esta información se ha extraído mediante la utilizacion de
+YOLOv5 (https://docs.ultralytics.com). YOLO (You Only Look Once) es un
+algoritmo basado en redes convolucionales muy potente para la detección de
+objetos en imágenes o vídeos en tiempo real.
+
+Vamos a trabajar con los siguientes  ficheros (images) y (labels) para analizar
+las imágenes y extraer conclusiones sin tener que mirar cada una de las
+imágenes. Image es una carpeta que contienetodas las imágenes tomadas en las
+ciudades mientras que Labels es una carpeta donde encontramos los archivos .txt
+con el mismo nombre de la imagen a la que corresponde y nos muestra los objetos
+detectados. Además tendremos class_name.txt, en el cual tenemos la relación
+entre el identificador del objetomy el nombre que nos aparece en los .txt.
+
+Para ver el funcionamineto de los diferentes módulos, solo es neceario iniciar
+la ejecución del código del archivo 'fichero_principal.py'. En este documento
+se compone del desarrollo de todos los pasos que tenemos que realizar
+durante todo el proyecto. Por ejemplo en el módulo 'ejercicio1.py' encontramos
+tres funciones, una primera función que agrupa en un dataframe los archivos de
+texto que tenemos de las imagenes con los objetos encontrados por YOLO,
+en una segunda función agrupa en un dataframe la lectura de cada imagen y por
+último hacemos mediante una función, una unión de ambos dataframes tomando como
+elemento de unión el nombre de los documentos/imagenes. 
+
+Pero antes de ejecutar este código, tenemos que hacer en nuestro entorno un 
+'python3 -m pip install --upgrade pip' para actulizar pip y
+posteriormente 'pip install -r requirements.txt' para poder normalizar el
+entorno de ejecución. Un vez realizado, accedemos a la carpeta activity_4 y
+ejecutamos 'fichero_principal.py'.
+
+Por último, en cuanto a la comprobación del código lo hemos llevado a cabo
+mediante el framework de 'unittest'. El conjunto de tests está agrupado en la
+carpeta de tests. Donde se encuentra una copia del código original y los datos
+utilizados para llevar a cabo la comprobación de los diferentes módulos y
+funciones. En total hemos utilizado 14 funciones únicas en nuestro código de
+las cuales hemos analizado el comportamiento de 8. Tanto en el módulo del
+ejercicio4, como en el ejercicio5 y ejercicio7 tenemos la función
+'process_files2' repetida y solo analizada en el test correspondiente al
+ejercicio5 con la cual generamos un dataframe con los objetos de yolo bajo
+los criterios del ejercicio número cuatro. Para ejecutar los tests tendriamos
+que ejecutar un código como 'python3 -m unittest test_name_module.py'. Por
+ejemplo con el caso de comprobar 'ejercicio1.py' tendríamos que utilizar
+'python3 -m unittest test_ejercicio1.py'.
